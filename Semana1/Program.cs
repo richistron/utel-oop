@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Semana1;
 
-Console.WriteLine("Hello, World!");
+var receiptManager = new ReceiptManager();
+receiptManager.PrintAll();
+receiptManager.SumAll();
