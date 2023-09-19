@@ -2,7 +2,7 @@
 
 public static class Reservation
 {
-    public static List<IRoom> AllRooms { get; } = new List<IRoom>
+    private static List<IRoom> AllRooms { get; } = new List<IRoom>
     {
         new SingleRoom(35, false),
         new SingleRoom(36, true),
@@ -23,12 +23,11 @@ public static class Reservation
 
     private static void BookRoom()
     {
-        int roomNumber;
         Console.WriteLine("What room would you like to choose?");
         while (true)
         {
             var input = Console.ReadLine();
-            if (int.TryParse(input, out roomNumber) && IsRoomAvailable(roomNumber) != null)
+            if (int.TryParse(input, out var roomNumber) && IsRoomAvailable(roomNumber) != null)
             {
                 Console.WriteLine("You have successfully book room: {0}", roomNumber);
                 break;
